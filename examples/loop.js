@@ -7,6 +7,9 @@ var loop = shark.loop;
 
 function act(event){
     console.log("Running...");
+    event.serial.info(function(data){
+        console.log(data.count);
+    });
 }
 
 loop(act,2000);
