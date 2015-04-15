@@ -48,6 +48,18 @@ if (typeof module === 'object') {
                 process.exit(1);   
             }
         },
-        api : emitter
+        api : emitter,
+        setup : emitter,
+        loop : function(func,interval){
+            if(typeof func !== "function"){
+                console.error("Loop input is not function!");
+                process.exit(1);
+            }
+            emitter.on('open',function(event){
+                setInterval(function(){
+                    func(event);
+                }, interval);
+            });
+        }
     };
 }

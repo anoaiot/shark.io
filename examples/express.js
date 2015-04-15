@@ -3,9 +3,9 @@ var router = express.Router();
 
 var shark = require('shark.io');
 shark.init('127.0.0.1:6969');
-var api = shark.api;
+var api = shark.setup;
 var apis;
-api.on('open',function(event){
+setup.on('open',function(event){
     apis = event.serial;
 })
 /* GET home page. */

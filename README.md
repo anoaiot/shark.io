@@ -9,19 +9,38 @@ $ npm install shark.io
 # How To Use
 
 ## NodeJS
+
+### simple.js
 ~~~javascript
 'use strict';
 
 var shark = require('shark.io');
 
 shark.init('127.0.0.1:6969');
-var api = shark.api;
+var setup = shark.setup;
 
-api.on('open',function(event){
+setup.on('open',function(event){
     event.serial.info(function(data){
         console.log(data);
+        process.exit(1);
     });
 });
+~~~
+
+### loop.js
+~~~javascript
+'use strict';
+
+var shark = require('shark.io');
+
+shark.init('127.0.0.1:6969');
+var loop = shark.loop;
+
+function act(event){
+    console.log("Running...");
+}
+
+loop(act,2000);
 ~~~
 
 ## HTML5
