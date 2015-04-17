@@ -1,5 +1,11 @@
 'use strict';
 
+/*
+pin 12 = out
+pin 6 = ground
+http://www.element14.com/community/docs/DOC-73950/l/raspberry-pi-2-model-b-gpio-40-pin-block-pinout
+*/
+
 var shark = require('../index.js');
 var sleep = require('sleep');
 
