@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="../lib.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                var socket;
+
+                socket = new WebSocket("ws://192.168.1.114:6969");
+
+                socket.onclose = function()
+                {
+                    console.error("web channel closed");
+                };
+                socket.onerror = function(error)
+                {
+                    console.error("web channel error: " + error);
+                };
+                socket.onopen = function()
+                {
+                    new sharkIO(socket, function(channel) {
+                        window.fs = channel.objects.fs;
+                        window.gpio = channel.objects.gpio;
+                        gpio.pin(18);
+                        gpio.mode("out");
+                    });
+                }
+            }
+
+            function on(){
+                gpio.write(1);
+            }
+            function off(){
+                gpio.write(0);
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="on()">On</button> <button onclick="off()">Off</button>
+    </body>
+</html>
