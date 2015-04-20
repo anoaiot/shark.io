@@ -1,6 +1,6 @@
 'use strict';
 
-var shark = require('shark.io');
+var shark = require('../index.js');
 var sleep = require('sleep');
 
 shark.init('127.0.0.1:6969');
