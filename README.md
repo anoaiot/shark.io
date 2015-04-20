@@ -55,16 +55,16 @@ var loop = shark.loop;
 var gpio;
 shark.setup.on('open',function(event){
     gpio = event.gpio;
-    gpio.pin(18);
+    gpio.set(18);
     gpio.mode("out");
 });
 
 function act(event){
     console.log("on");
-    gpio.write(1);
+    gpio.write(18,1);
     sleep.sleep(3);
     console.log("off");
-    gpio.write(0);
+    gpio.write(18,0);
 }
 
 loop(act,500);
