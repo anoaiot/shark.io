@@ -22,17 +22,17 @@
                     new sharkIO(socket, function(channel) {
                         window.fs = channel.objects.fs;
                         window.gpio = channel.objects.gpio;
-                        gpio.pin(18);
+                        gpio.set(18);
                         gpio.mode("out");
                     });
                 }
             }
 
             function on(){
-                gpio.write(1);
+                gpio.write(18,1);
             }
             function off(){
-                gpio.write(0);
+                gpio.write(18,0);
             }
         </script>
     </head>
