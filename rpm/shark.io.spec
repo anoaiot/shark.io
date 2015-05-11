@@ -3,7 +3,7 @@
 Summary:Javascript Client for ignsdk IoT
 Name:sharkio
 Version:0.1
-Release:7
+Release:8
 License:BSD
 Group:System Environment/Base
 URL:http://igos-nusantara.or.id
@@ -35,5 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 %{nodejs_sitelib}/shark.io
 
 %changelog
+* Wed May 11 2015 ibnu yahya <anak10thn@gmail.com>
+- Bump version to 0.1.8
 * Tue Apr 21 2015 ibnu yahya <anak10thn@gmail.com>
 - Bump version to 0.1.7
