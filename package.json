@@ -1,6 +1,6 @@
 {
     "name": "shark.io",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "JS Websocket Client Library for IGNSDK IoT",
     "homepage": "http://ignsdk.web.id",
     "repository": {

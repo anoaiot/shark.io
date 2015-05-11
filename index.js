@@ -37,15 +37,15 @@ function init(address){
 
 if (typeof module === 'object') {
     module.exports = {
-        init : function(addr){
+        init : function(address){
+            var addr = "127.0.0.1:6969";
+            if(address){
+                addr = address;
+            }
             var addrSplit = addr.split(":");
             var ipSplit = addrSplit[0].split(".");
             if(addrSplit.length === 2 && ipSplit.length === 4){
                 init(addr);
-            }
-            else{
-                console.log("Init failed!");
-                process.exit(1);   
             }
         },
         api : emitter,
