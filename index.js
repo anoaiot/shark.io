@@ -1,6 +1,6 @@
 'use strict';
 
-var sharkIO = require('./lib.js');
+var sharkIO = require('./lib');
 var websocket = require('faye-websocket');
 var events = require('events');
 var emitter = new events.EventEmitter();
