@@ -1,6 +1,6 @@
 {
     "name": "shark.io",
-    "version": "0.1.8",
+    "version": "0.2.0",
     "description": "JS Websocket Client Library for IGNSDK IoT",
     "homepage": "http://ignsdk.web.id",
     "repository": {
@@ -15,7 +15,7 @@
     ],
     "author": "Eka Tresna Irawan <anak10thn@gmail.com>",
     "dependencies": {
-        "faye-websocket": "0.7.x"
+        "faye-websocket": "0.11.x"
     },
     "main": "./index",
     "engine": "node 0.10.x"
