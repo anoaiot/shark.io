@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script type="text/javascript" src="../lib.js"></script>
+        <script type="text/javascript" src="../lib/index.js"></script>
         <script type="text/javascript">
             function output(message)
             {
@@ -11,7 +11,7 @@
             }
             window.onload = function() {
                 var socket;
-                
+
                 socket = new WebSocket("ws://127.0.0.1:6969");
 
                 socket.onclose = function()
@@ -34,9 +34,9 @@
                         serial.info(function(event) {
                             output("Device count: "+event.count);
                             event.device.forEach(function(i){
-                                output("Location : "+i.location); 
-                                output("Port Name : "+i.port); 
-                                output("---------------------------"); 
+                                output("Location : "+i.location);
+                                output("Port Name : "+i.port);
+                                output("---------------------------");
                             });
                         });
                         //output("Connected to WebChannel, ready to send/receive messages!");
