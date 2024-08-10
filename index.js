@@ -1,12 +1,11 @@
 'use strict';
 
-var sharkIO = require('./lib');
-var websocket = require('faye-websocket');
-var events = require('events');
-var emitter = new events.EventEmitter();
-var status = {};
+const { sharkIO } = require('./lib');
+const websocket = require('faye-websocket');
+const events = require('events');
+const emitter = new events.EventEmitter();
 
-var chn = function(transport) {
+const chn = function(transport) {
     return new sharkIO(transport, function(channel) {
         emitter.emit('open', channel.objects);
     });
@@ -37,15 +36,11 @@ function init(address){
 
 if (typeof module === 'object') {
     module.exports = {
-        init : function(address){
-            var addr = "127.0.0.1:6969";
-            if(address){
-                addr = address;
-            }
-            var addrSplit = addr.split(":");
-            var ipSplit = addrSplit[0].split(".");
+        init : function(address = "127.0.0.1:6969"){
+            const addrSplit = address.split(":");
+            const ipSplit = addrSplit[0].split(".");
             if(addrSplit.length === 2 && ipSplit.length === 4){
-                init(addr);
+                init(address);
             }
         },
         api : emitter,

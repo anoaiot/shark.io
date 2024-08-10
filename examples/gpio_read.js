@@ -1,10 +1,8 @@
 'use strict';
 
 var shark = require('../index.js');
-var sleep = require('sleep');
 
-shark.init('127.0.0.1:6969');
-var loop = shark.loop;
+shark.init('192.168.100.189:6969');
 var gpio;
 shark.setup.on('open',function(event){
     gpio = event.gpio;
